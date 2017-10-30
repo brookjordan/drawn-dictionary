@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Drawing Dictionary</title>
+</head>
+<body>
+    <div class="login-page">
+        {{#if message }}
+            <div class="login-page__alert flash-message flash-message--error">
+                <p class="flash-message__text">{{ message }}</p>
+            </div>
+        {{/if}}
+
+        <form class="login-page__form" action="/login" method="post">
+            <div class="label-text">
+                <input class="label-text__input" type="email" name="username" placeholder="starchild" pattern=".{4,}" required>
+                <label class="label-text__label">Email</label>
+            </div>
+            <div class="label-text">
+                <input class="label-text__input" type="password" name="password" placeholder="••••••••" pattern=".{6,}" required>
+                <label class="label-text__label">Password</label>
+            </div>
+            <div class="label-text">
+                <input class="label-text__input" type="text" name="displayname" placeholder="Joe Bloggs">
+                <label class="label-text__label">Display name</label>
+            </div>
+
+            <button class="cta-button" type="submit">Log in / sign up</button>
+        </form>
+    </div>
+
+    <script>
+        !function() {
+            let forms                 = document.querySelectorAll('.a-form');
+            let unattemptedFieldClass = 'a-form__input--unattempted';
+
+            [...forms].forEach(form => {
+                let fields = form.querySelectorAll('[required]');
+
+                [...fields].forEach(field => {
+                    field.classList.add(unattemptedFieldClass);
+
+                    field.addEventListener('invalid', e => {
+                        field.classList.remove(unattemptedFieldClass);
+                    });
+                });
+            });
+        }();
+    </script>
+
+</body>
+</html>

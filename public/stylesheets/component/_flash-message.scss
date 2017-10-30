@@ -1,0 +1,17 @@
+.flash-message {
+  display: inline-block;
+  @include in-rem(padding, 15px 30px);
+  @include in-rem(border, 1px solid currentColor);
+  @include in-rem(border-left-width, 5px);
+  @include in-rem(line-height, 30px);
+  @include in-rem(border-radius, $border-radius);
+
+  &--error {
+    color: $c-error;
+    background-color: $c-error-overlay;
+  }
+
+  &__text {
+
+  }
+}

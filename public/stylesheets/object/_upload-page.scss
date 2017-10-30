@@ -1,0 +1,32 @@
+.upload-page {
+  @include in-rem(grid-template-columns, 1fr 30px 1fr);
+  @include in-rem(padding-top, 30px);
+  display: grid;
+  grid-template-areas: "banner banner banner"
+                       "choose ...... upload"
+                       "image  image  image";
+  width: 80%;
+  margin: 0 auto;
+
+  &__banner {
+    @include in-rem(margin-bottom, 30px);
+    grid-area: banner;
+    width: 100%;
+  }
+
+  &__image {
+    @include in-rem(margin-top, 30px);
+    grid-area: image;
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+  }
+
+  &__choose {
+    grid-area: choose;
+  }
+
+  &__upload {
+    grid-area: upload;
+  }
+}

@@ -1,0 +1,26 @@
+@import "clean-number";
+
+$font-size-html: 16px !default;
+
+@function convert-to-rem ($size, $fs-base: $font-size-html) {
+  @return (1rem) / clean-number($fs-base) * clean-number($size);
+}
+
+@mixin in-rem ($rule: font-size, $sizes: 1) {
+  $sizes-px: ();
+  $sizes-rem: ();
+
+  @each $_size in $sizes {
+    @if type-of($_size) == 'number' and unit($_size) == 'px' {
+      $size:      clean-number($_size);
+      $sizes-px:  append($sizes-px,  1px * $size);
+      $sizes-rem: append($sizes-rem, convert-to-rem($size));
+    } @else {
+      $sizes-px:  append($sizes-px,  $_size);
+      $sizes-rem: append($sizes-rem, $_size);
+    }
+  }
+
+  #{$rule}: $sizes-px;
+  #{$rule}: $sizes-rem;
+}

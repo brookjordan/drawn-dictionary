@@ -1,0 +1,12 @@
+.a-form {
+  $field-width: 240px;
+  $highlight-field-width: 300px;
+
+  > * + * {
+    @include in-rem(margin-top, 30px);
+  }
+
+  &__input:invalid:not(&__input--unattempted) + &__label {
+    color: $c-error;
+  }
+}

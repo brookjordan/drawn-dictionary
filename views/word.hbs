@@ -1,0 +1,59 @@
+<form class="upload-page"
+      id="image-uploader"
+      action="/" method="post"
+      enctype="multipart/form-data">
+  <div class="upload-page__banner label-text">
+      <p class="label-text__input label-text__input--highlight">
+        {{ currentword }}
+      </p>
+      <label class="label-text__label">You're drawing:</label>
+  </div>
+
+  <div class="upload-page__choose menu-bar__item">
+    <input id="choose-image-button" name="image" type="file" accept="image/png, image/jpeg" style="visibility:hidden;position:absolute;pointer-events:none;width:0;height:0;">
+    <label class="button button--hollow" for="choose-image-button">Choose image</label>
+  </div>
+
+  <div class="upload-page__upload menu-bar__item">
+    <button class="button button--cta">Upload</button>
+  </div>
+
+  <img class="upload-page__image hidden">
+</form>
+
+
+<script>
+  [...document.querySelectorAll('input[type="file"]')].forEach(input => {
+    var label	 = input.nextElementSibling;
+    if (label.tagName !== 'LABEL') { return; }
+
+    input.addEventListener('change', e => {
+      let fileName = input.files.length
+        ? input.value.split( '\\' ).pop()
+        : '';
+
+      label.innerHTML = fileName || 'Choose an image';
+    });
+  });
+</script>
+
+<script type="text/javascript">
+  let chooseImageBtn = document.querySelector("#choose-image-button");
+  let displayImage   = document.querySelector(".upload-page__image");
+
+  chooseImageBtn.addEventListener('change', e => {
+    readURL(chooseImageBtn);
+  });
+
+  function readURL(input) {
+    if (input.files && input.files.length) {
+      var reader = new FileReader();
+
+      reader.onload = e => {
+        displayImage.src = e.target.result;
+        displayImage.classList.remove('hidden');
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+</script>

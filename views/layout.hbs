@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
+  </head>
+  <body>
+    <div class="app">
+      <div class="app__header app-header">
+        {{#if username}}
+          <div class="app-header__user-icon"></div>
+          <div class="app-header__user-name">{{ username }}</div>
+        {{/if}}
+        <div class="app-header__site-icon"></div>
+      </div>
+
+      <div class="app__body">
+        {{{body}}}
+      </div>
+
+      <div class="app__footer">
+        {{#if username}}
+          <a class="app__log-out" href="/logout">Log out</a>
+        {{/if}}
+      </div>
+    </div>
+
+  </body>
+</html>

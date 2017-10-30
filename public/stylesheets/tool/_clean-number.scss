@@ -1,0 +1,3 @@
+@function clean-number($number) {
+  @return $number / ($number * 0 + 1);
+}

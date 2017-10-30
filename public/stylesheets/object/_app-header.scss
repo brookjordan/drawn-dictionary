@@ -1,0 +1,27 @@
+.app-header {
+  display: grid;
+  grid-template-areas:  "user-icon user-name spacer app-logo";
+  grid-template-columns: auto      auto      1fr    auto;
+  width: 100%;
+
+  &__user-icon {
+    grid-area: user-icon;
+    width: 60px;
+    height: 60px;
+    background: $violet-faint;
+  }
+
+  &__user-name {
+    grid-area: user-name;
+    padding: 15px;
+    line-height: 30px;
+    color: $violet-faint;
+  }
+
+  &__site-icon {
+    grid-area: app-logo;
+    width: 60px;
+    height: 60px;
+    background: $violet-faint;
+  }
+}
