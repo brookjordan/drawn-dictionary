@@ -7,10 +7,10 @@
   cursor: pointer;
 
   &--cta {
-    background: $violet-pop;
+    background: $c-gray-30;
   }
 
   &--hollow {
-    border: 1px solid $violet-faint;
+    border: 1px solid $c-gray-50;
   }
 }

@@ -56,11 +56,11 @@ textarea {
   appearance: none; }
 
 ::placeholder {
-  color: #392a4d; }
+  color: #494450; }
 
 body {
-  background: #242033;
-  color: #7986b9; }
+  background: #222027;
+  color: #9f97be; }
 
 *,
 ::before,
@@ -91,30 +91,32 @@ html {
   .app__log-out, .app__log-out:hover {
     display: block;
     text-decoration: none;
-    color: #5b518d;
+    color: #847d94;
     padding: 15px;
     line-height: 30px; }
 
 .app-header {
   display: grid;
-  grid-template-areas: "user-icon user-name spacer app-logo";
-  grid-template-columns: auto      auto      1fr    auto;
+  grid-template-areas: "app-logo spacer user-icon user-name";
+  grid-template-columns: auto     1fr    auto      auto;
   width: 100%; }
   .app-header__user-icon {
     grid-area: user-icon;
     width: 60px;
     height: 60px;
-    background: #5b518d; }
+    background: #9f97be no-repeat 50% 50% url("/images/avatar-fallback.svg");
+    background-size: 80%; }
   .app-header__user-name {
     grid-area: user-name;
     padding: 15px;
     line-height: 30px;
-    color: #5b518d; }
+    color: #847d94; }
   .app-header__site-icon {
     grid-area: app-logo;
     width: 60px;
     height: 60px;
-    background: #5b518d; }
+    background: no-repeat 50% 50% url("/images/logo.svg");
+    background-size: 80%; }
 
 .center-page {
   display: flex;
@@ -205,11 +207,11 @@ html {
     padding: 0 0.41667rem;
     position: absolute;
     text-transform: uppercase;
-    background: #242033;
-    color: #5b518d; }
+    background: #222027;
+    color: #847d94; }
   .label-text__input {
-    border: 1px solid #5b518d;
-    border: 0.04167rem solid #5b518d;
+    border: 1px solid #847d94;
+    border: 0.04167rem solid #847d94;
     border-radius: 4px;
     border-radius: 0.16667rem;
     line-height: 45px;
@@ -235,9 +237,9 @@ html {
   text-align: center;
   cursor: pointer; }
   .button--cta {
-    background: #392a4d; }
+    background: #494450; }
   .button--hollow {
-    border: 1px solid #5b518d; }
+    border: 1px solid #847d94; }
 
 .hidden {
   display: none !important; }

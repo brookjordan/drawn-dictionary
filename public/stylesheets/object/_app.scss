@@ -10,7 +10,7 @@
   &__header {
     grid-area: header;
     height: 60px;
-    background-color: $violet-pop;
+    background-color: $c-purple;
   }
 
   &__body {
@@ -29,7 +29,7 @@
     &:hover {
       display: block;
       text-decoration: none;
-      color: $violet-faint;
+      color: $c-gray-50;
       padding: 15px;
       line-height: 30px;
     }
